@@ -1,6 +1,9 @@
 backend:
   name: git-gateway
   branch: master
+
+publish_mode: editorial_workflow
+
 media_folder: static/images
 public_folder: /images
 collections:
@@ -2877,3 +2880,1794 @@ collections:
     filter:
       field: template
       value: advanced
+
+  - name: product
+    label: Product Pages
+    folder: src/pages
+    create: true
+    extension: md
+    identifier_field: title
+    slug: '{{slug}}'
+    summary: '{{title}}'
+    fields:
+      - widget: string
+        name: title
+        label: Title
+        required: true
+        hint: The title of the page
+      - widget: list
+        name: sections
+        label: Sections
+        required: false
+        hint: Page sections
+        types:
+          - name: hero_section
+            widget: object
+            label: Hero section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section displayed below the title
+              - widget: markdown
+                name: content
+                label: Content
+                required: false
+                hint: The text content of the section
+              - widget: list
+                name: actions
+                label: Action buttons
+                required: false
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                    default: '#'
+                  - widget: select
+                    name: style
+                    label: Style
+                    required: true
+                    default: link
+                    options:
+                      - link
+                      - primary
+                      - secondary
+                  - widget: boolean
+                    name: has_icon
+                    label: Show icon
+                    required: false
+                    default: false
+                  - widget: select
+                    name: icon
+                    label: Icon
+                    required: false
+                    options:
+                      - arrow-left
+                      - arrow-right
+                      - facebook
+                      - github
+                      - instagram
+                      - linkedin
+                      - twitter
+                      - vimeo
+                      - youtube
+                  - widget: select
+                    name: icon_position
+                    label: Icon position
+                    required: false
+                    default: right
+                    hint: Select "center" to display icon only and hide the label
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new tab/window
+                    required: false
+                    default: false
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: image
+                name: image
+                label: Image
+                required: false
+                hint: The image of the section
+              - widget: string
+                name: image_alt
+                label: Image alt text
+                required: false
+                hint: The alt text of the section image
+              - widget: text
+                name: video_embed_html
+                label: Video Embed Code
+                required: false
+                hint: The HTML embed code for your video
+              - widget: select
+                name: media_position
+                label: Image or video position
+                required: false
+                default: top
+                hint: >-
+                  The position of the image or video relative to the text
+                  content
+                options:
+                  - left
+                  - right
+                  - top
+                  - bottom
+              - widget: select
+                name: media_width
+                label: Image or video width
+                required: false
+                default: fifty
+                hint: >-
+                  The image or video container width as a percentage of the
+                  section width. Used only when the image or video position is
+                  set to "left" or "right"
+                options:
+                  - fourty
+                  - fifty
+                  - sixty
+              - widget: select
+                name: align
+                label: Section alignment
+                required: false
+                default: left
+                hint: The horizontal alignment of the section content
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: select
+                name: padding_top
+                label: Section top padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the top of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: padding_bottom
+                label: Section bottom padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the bottom of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: has_border
+                label: Section border
+                required: false
+                default: false
+                hint: Add section bottom border
+              - widget: select
+                name: background_color
+                label: Background color
+                required: false
+                default: none
+                hint: The background color of the section
+                options:
+                  - none
+                  - primary
+                  - secondary
+              - widget: image
+                name: background_image
+                label: Background image
+                required: false
+                hint: The image displayed in the background of the section
+              - widget: number
+                name: background_image_opacity
+                label: Background image opacity
+                required: false
+                hint: >-
+                  An integer between 0 and 100. A lower value makes the image
+                  more transparent
+                valueType: int
+              - widget: select
+                name: background_image_size
+                label: Background image size
+                required: false
+                default: cover
+                hint: The size of the background image
+                options:
+                  - auto
+                  - contain
+                  - cover
+              - widget: select
+                name: background_image_position
+                label: Background image position
+                required: false
+                default: center center
+                hint: >-
+                  The starting position of a background image. The first value
+                  is the horizontal position, and the second value is the
+                  vertical
+                options:
+                  - left top
+                  - left center
+                  - left bottom
+                  - center top
+                  - center center
+                  - center bottom
+                  - right top
+                  - right center
+                  - right bottom
+              - widget: select
+                name: background_image_repeat
+                label: Background image repeat
+                required: false
+                default: no-repeat
+                hint: Repeat the image to cover the whole area
+                options:
+                  - repeat
+                  - no-repeat
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: hero_section
+          - name: features_section
+            widget: object
+            label: Features section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section displayed above the title
+              - widget: list
+                name: features
+                label: Features
+                required: false
+                fields:
+                  - widget: string
+                    name: title
+                    label: Title
+                    required: false
+                    hint: The title of the feature
+                  - widget: string
+                    name: subtitle
+                    label: Subtitle
+                    required: false
+                    hint: The subtitle of the feature displayed below the title
+                  - widget: markdown
+                    name: content
+                    label: Content
+                    required: false
+                    hint: The text content of the feature
+                  - widget: list
+                    name: actions
+                    label: Action buttons
+                    required: false
+                    fields:
+                      - widget: string
+                        name: label
+                        label: Label
+                        required: true
+                      - widget: string
+                        name: url
+                        label: URL
+                        required: true
+                        default: '#'
+                      - widget: select
+                        name: style
+                        label: Style
+                        required: true
+                        default: link
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - widget: boolean
+                        name: has_icon
+                        label: Show icon
+                        required: false
+                        default: false
+                      - widget: select
+                        name: icon
+                        label: Icon
+                        required: false
+                        options:
+                          - arrow-left
+                          - arrow-right
+                          - facebook
+                          - github
+                          - instagram
+                          - linkedin
+                          - twitter
+                          - vimeo
+                          - youtube
+                      - widget: select
+                        name: icon_position
+                        label: Icon position
+                        required: false
+                        default: right
+                        hint: >-
+                          Select "center" to display icon only and hide the
+                          label
+                        options:
+                          - left
+                          - right
+                          - center
+                      - widget: boolean
+                        name: new_window
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                      - widget: boolean
+                        name: no_follow
+                        label: No follow
+                        required: false
+                        default: false
+                        hint: Add rel="nofollow" attribute to the link
+                      - widget: hidden
+                        name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                  - widget: image
+                    name: image
+                    label: Image
+                    required: false
+                    hint: The image of the feature
+                  - widget: string
+                    name: image_alt
+                    label: Image alt text
+                    required: false
+                    hint: The alt text of the feature image
+                  - widget: text
+                    name: video_embed_html
+                    label: Video Embed Code
+                    required: false
+                    hint: The HTML embed code for your video
+                  - widget: select
+                    name: media_position
+                    label: Image or video position
+                    required: false
+                    default: top
+                    hint: >-
+                      The position of the image or video relative to the text
+                      content
+                    options:
+                      - left
+                      - right
+                      - top
+                      - bottom
+                  - widget: select
+                    name: media_width
+                    label: Image or video width
+                    required: false
+                    default: fifty
+                    hint: >-
+                      The image or video container width as a percentage of the
+                      feature width. Used only when the image or video position
+                      is set to "left" or "right"
+                    options:
+                      - thirty-three
+                      - fourty
+                      - fifty
+                      - sixty
+                  - widget: select
+                    name: align
+                    label: Feature alignment
+                    required: false
+                    default: left
+                    hint: The horizontal alignment of the feature content
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: feature
+              - widget: select
+                name: feature_padding_vert
+                label: Feature padding vertical
+                required: false
+                default: medium
+                hint: The vertical spacing between section features
+                options:
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: align
+                label: Section alignment
+                required: false
+                default: center
+                hint: >-
+                  The horizontal alignment of the section content (title,
+                  subtitle)
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: select
+                name: padding_top
+                label: Section top padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the top of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: padding_bottom
+                label: Section bottom padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the bottom of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: has_border
+                label: Section border
+                required: false
+                default: false
+                hint: Add section bottom border
+              - widget: select
+                name: background_color
+                label: Background color
+                required: false
+                default: none
+                hint: The background color of the section
+                options:
+                  - none
+                  - primary
+                  - secondary
+              - widget: image
+                name: background_image
+                label: Background image
+                required: false
+                hint: The image displayed in the background of the section
+              - widget: number
+                name: background_image_opacity
+                label: Background image opacity
+                required: false
+                hint: >-
+                  An integer between 0 and 100. A lower value makes the image
+                  more transparent
+                valueType: int
+              - widget: select
+                name: background_image_size
+                label: Background image size
+                required: false
+                default: cover
+                hint: The size of the background image
+                options:
+                  - auto
+                  - contain
+                  - cover
+              - widget: select
+                name: background_image_position
+                label: Background image position
+                required: false
+                default: center center
+                hint: >-
+                  The starting position of a background image. The first value
+                  is the horizontal position, and the second value is the
+                  vertical
+                options:
+                  - left top
+                  - left center
+                  - left bottom
+                  - center top
+                  - center center
+                  - center bottom
+                  - right top
+                  - right center
+                  - right bottom
+              - widget: select
+                name: background_image_repeat
+                label: Background image repeat
+                required: false
+                default: no-repeat
+                hint: Repeat the image to cover the whole area
+                options:
+                  - repeat
+                  - no-repeat
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: features_section
+          - name: grid_section
+            widget: object
+            label: Grid section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section displayed above the title
+              - widget: list
+                name: actions
+                label: Action buttons
+                required: false
+                hint: Action buttons displayed below section items
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                    default: '#'
+                  - widget: select
+                    name: style
+                    label: Style
+                    required: true
+                    default: link
+                    options:
+                      - link
+                      - primary
+                      - secondary
+                  - widget: boolean
+                    name: has_icon
+                    label: Show icon
+                    required: false
+                    default: false
+                  - widget: select
+                    name: icon
+                    label: Icon
+                    required: false
+                    options:
+                      - arrow-left
+                      - arrow-right
+                      - facebook
+                      - github
+                      - instagram
+                      - linkedin
+                      - twitter
+                      - vimeo
+                      - youtube
+                  - widget: select
+                    name: icon_position
+                    label: Icon position
+                    required: false
+                    default: right
+                    hint: Select "center" to display icon only and hide the label
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new tab/window
+                    required: false
+                    default: false
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: list
+                name: grid_items
+                label: Grid items
+                required: false
+                fields:
+                  - widget: string
+                    name: title
+                    label: Title
+                    required: false
+                    hint: The title of the item
+                  - widget: string
+                    name: subtitle
+                    label: Subtitle
+                    required: false
+                    hint: The subtitle of the item displayed below the title
+                  - widget: select
+                    name: title_align
+                    label: 'Title, subtitle alignment'
+                    required: false
+                    default: left
+                    hint: The horizontal alignment of the item title and subtitle
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: markdown
+                    name: content
+                    label: Content
+                    required: false
+                    hint: The text content of the item
+                  - widget: select
+                    name: content_align
+                    label: Content alignment
+                    required: false
+                    default: left
+                    hint: The horizontal alignment of the item text content
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: list
+                    name: actions
+                    label: Action buttons
+                    required: false
+                    fields:
+                      - widget: string
+                        name: label
+                        label: Label
+                        required: true
+                      - widget: string
+                        name: url
+                        label: URL
+                        required: true
+                        default: '#'
+                      - widget: select
+                        name: style
+                        label: Style
+                        required: true
+                        default: link
+                        options:
+                          - link
+                          - primary
+                          - secondary
+                      - widget: boolean
+                        name: has_icon
+                        label: Show icon
+                        required: false
+                        default: false
+                      - widget: select
+                        name: icon
+                        label: Icon
+                        required: false
+                        options:
+                          - arrow-left
+                          - arrow-right
+                          - facebook
+                          - github
+                          - instagram
+                          - linkedin
+                          - twitter
+                          - vimeo
+                          - youtube
+                      - widget: select
+                        name: icon_position
+                        label: Icon position
+                        required: false
+                        default: right
+                        hint: >-
+                          Select "center" to display icon only and hide the
+                          label
+                        options:
+                          - left
+                          - right
+                          - center
+                      - widget: boolean
+                        name: new_window
+                        label: Open in new tab/window
+                        required: false
+                        default: false
+                      - widget: boolean
+                        name: no_follow
+                        label: No follow
+                        required: false
+                        default: false
+                        hint: Add rel="nofollow" attribute to the link
+                      - widget: hidden
+                        name: type
+                        label: Object Type
+                        required: true
+                        hint: The type of the object
+                        default: action
+                  - widget: select
+                    name: actions_align
+                    label: Action buttons alignment
+                    required: false
+                    default: left
+                    hint: The horizontal alignment of the item action buttons
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: select
+                    name: actions_width
+                    label: Action buttons width
+                    required: false
+                    default: auto
+                    hint: The width of action button
+                    options:
+                      - auto
+                      - full-width
+                  - widget: image
+                    name: image
+                    label: Image
+                    required: false
+                    hint: The image of the item
+                  - widget: string
+                    name: image_alt
+                    label: Image alt text
+                    required: false
+                    hint: The alt text of the item image
+                  - widget: select
+                    name: image_position
+                    label: Image position
+                    required: false
+                    default: top
+                    hint: The position of the image relative to the text content
+                    options:
+                      - left
+                      - right
+                      - top
+                      - bottom
+                  - widget: select
+                    name: image_width
+                    label: Image container width
+                    required: false
+                    default: fifty
+                    hint: >-
+                      The image container width as a percentage of the item
+                      width. Used only when the image position is set to "left"
+                      or "right"
+                    options:
+                      - twenty-five
+                      - thirty-three
+                      - fourty
+                      - fifty
+                      - sixty
+                  - widget: select
+                    name: image_align
+                    label: Image alignment
+                    required: false
+                    default: left
+                    hint: The horizontal alignment of the image
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: boolean
+                    name: image_has_padding
+                    label: Image padding
+                    required: false
+                    default: false
+                    hint: >-
+                      Add padding (space) around the image. Used only when
+                      "Enable cards" is set to true
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: grid_item
+              - widget: select
+                name: grid_cols
+                label: Grid columns
+                required: false
+                default: three
+                hint: Show the specified number of items in a grid row
+                options:
+                  - two
+                  - three
+                  - four
+              - widget: select
+                name: grid_gap_vert
+                label: Grid gap vertical
+                required: false
+                default: small
+                hint: The vertical spacing between grid items
+                options:
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: grid_gap_horiz
+                label: Grid gap horizontal
+                required: false
+                default: small
+                hint: The horizontal spacing between grid items
+                options:
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: enable_cards
+                label: Enable cards
+                required: false
+                default: false
+                hint: >-
+                  Display items as cards, i.e. add border, background and some
+                  padding around the item content
+              - widget: select
+                name: align
+                label: Section alignment
+                required: false
+                default: center
+                hint: >-
+                  The horizontal alignment of the section content (title,
+                  subtitle, action buttons)
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: select
+                name: padding_top
+                label: Section top padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the top of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: padding_bottom
+                label: Section bottom padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the bottom of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: has_border
+                label: Section border
+                required: false
+                default: false
+                hint: Add section bottom border
+              - widget: select
+                name: background_color
+                label: Background color
+                required: false
+                default: none
+                hint: The background color of the section
+                options:
+                  - none
+                  - primary
+                  - secondary
+              - widget: image
+                name: background_image
+                label: Background image
+                required: false
+                hint: The image displayed in the background of the section
+              - widget: number
+                name: background_image_opacity
+                label: Background image opacity
+                required: false
+                hint: >-
+                  An integer between 0 and 100. A lower value makes the image
+                  more transparent
+                valueType: int
+              - widget: select
+                name: background_image_size
+                label: Background image size
+                required: false
+                default: cover
+                hint: The size of the background image
+                options:
+                  - auto
+                  - contain
+                  - cover
+              - widget: select
+                name: background_image_position
+                label: Background image position
+                required: false
+                default: center center
+                hint: >-
+                  The starting position of a background image. The first value
+                  is the horizontal position, and the second value is the
+                  vertical
+                options:
+                  - left top
+                  - left center
+                  - left bottom
+                  - center top
+                  - center center
+                  - center bottom
+                  - right top
+                  - right center
+                  - right bottom
+              - widget: select
+                name: background_image_repeat
+                label: Background image repeat
+                required: false
+                default: no-repeat
+                hint: Repeat the image to cover the whole area
+                options:
+                  - repeat
+                  - no-repeat
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: grid_section
+          - name: blog_feed_section
+            widget: object
+            label: Blog feed section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section displayed above the title
+              - widget: list
+                name: actions
+                label: Action buttons
+                required: false
+                hint: Action buttons displayed below blog posts
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                    default: '#'
+                  - widget: select
+                    name: style
+                    label: Style
+                    required: true
+                    default: link
+                    options:
+                      - link
+                      - primary
+                      - secondary
+                  - widget: boolean
+                    name: has_icon
+                    label: Show icon
+                    required: false
+                    default: false
+                  - widget: select
+                    name: icon
+                    label: Icon
+                    required: false
+                    options:
+                      - arrow-left
+                      - arrow-right
+                      - facebook
+                      - github
+                      - instagram
+                      - linkedin
+                      - twitter
+                      - vimeo
+                      - youtube
+                  - widget: select
+                    name: icon_position
+                    label: Icon position
+                    required: false
+                    default: right
+                    hint: Select "center" to display icon only and hide the label
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new tab/window
+                    required: false
+                    default: false
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: select
+                name: blog_feed_cols
+                label: Blog feed columns
+                required: false
+                default: three
+                hint: Show the specified number of posts in a blog feed grid row
+                options:
+                  - two
+                  - three
+              - widget: boolean
+                name: enable_cards
+                label: Enable cards
+                required: false
+                default: false
+                hint: >-
+                  Display posts as cards, i.e. add border, background and some
+                  padding around post content
+              - widget: boolean
+                name: show_recent
+                label: Show recent posts only
+                required: true
+                default: false
+                hint: >-
+                  Show the specified number of recent posts. Should not be used
+                  with author, category and tag filters
+              - widget: number
+                name: recent_count
+                label: Number of recent posts to show
+                required: false
+                valueType: int
+              - widget: relation
+                name: author
+                label: Author filter
+                required: false
+                hint: Filter posts by an author
+                collection: person
+                valueField: 'src/data/team/{{slug}}.yaml'
+                searchFields:
+                  - id
+                displayFields:
+                  - id
+              - widget: relation
+                name: category
+                label: Category filter
+                required: false
+                hint: Filter posts by a category
+                collection: category
+                valueField: 'src/data/categories/{{slug}}.yaml'
+                searchFields:
+                  - title
+                displayFields:
+                  - title
+              - widget: relation
+                name: tag
+                label: Tag filter
+                required: false
+                hint: Filter posts by a tag
+                collection: tag
+                valueField: 'src/data/tags/{{slug}}.yaml'
+                searchFields:
+                  - title
+                displayFields:
+                  - title
+              - widget: boolean
+                name: show_date
+                label: Show date
+                required: false
+                default: true
+                hint: Show the publish date of the post
+              - widget: boolean
+                name: show_categories
+                label: Show categories
+                required: false
+                default: false
+                hint: Show the categories of the post
+              - widget: boolean
+                name: show_author
+                label: Show author
+                required: false
+                default: false
+                hint: Show the author of the post
+              - widget: boolean
+                name: show_excerpt
+                label: Show excerpt
+                required: false
+                default: false
+                hint: Show the excerpt of the post
+              - widget: boolean
+                name: show_image
+                label: Show image
+                required: false
+                default: true
+                hint: Show the post image thumbnail
+              - widget: select
+                name: align
+                label: Section alignment
+                required: false
+                default: center
+                hint: >-
+                  The horizontal alignment of the section content (title,
+                  subtitle, action buttons)
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: select
+                name: padding_top
+                label: Section top padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the top of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: padding_bottom
+                label: Section bottom padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the bottom of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: has_border
+                label: Section border
+                required: false
+                default: false
+                hint: Add section bottom border
+              - widget: select
+                name: background_color
+                label: Background color
+                required: false
+                default: none
+                hint: The background color of the section
+                options:
+                  - none
+                  - primary
+                  - secondary
+              - widget: image
+                name: background_image
+                label: Background image
+                required: false
+                hint: The image displayed in the background of the section
+              - widget: number
+                name: background_image_opacity
+                label: Background image opacity
+                required: false
+                hint: >-
+                  An integer between 0 and 100. A lower value makes the image
+                  more transparent
+                valueType: int
+              - widget: select
+                name: background_image_size
+                label: Background image size
+                required: false
+                default: cover
+                hint: The size of the background image
+                options:
+                  - auto
+                  - contain
+                  - cover
+              - widget: select
+                name: background_image_position
+                label: Background image position
+                required: false
+                default: center center
+                hint: >-
+                  The starting position of a background image. The first value
+                  is the horizontal position, and the second value is the
+                  vertical
+                options:
+                  - left top
+                  - left center
+                  - left bottom
+                  - center top
+                  - center center
+                  - center bottom
+                  - right top
+                  - right center
+                  - right bottom
+              - widget: select
+                name: background_image_repeat
+                label: Background image repeat
+                required: false
+                default: no-repeat
+                hint: Repeat the image to cover the whole area
+                options:
+                  - repeat
+                  - no-repeat
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: blog_feed_section
+          - name: cta_section
+            widget: object
+            label: CTA section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: markdown
+                name: content
+                label: Content
+                required: false
+                hint: The text content of the section
+              - widget: list
+                name: actions
+                label: Action buttons
+                required: false
+                fields:
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: true
+                  - widget: string
+                    name: url
+                    label: URL
+                    required: true
+                    default: '#'
+                  - widget: select
+                    name: style
+                    label: Style
+                    required: true
+                    default: link
+                    options:
+                      - link
+                      - primary
+                      - secondary
+                  - widget: boolean
+                    name: has_icon
+                    label: Show icon
+                    required: false
+                    default: false
+                  - widget: select
+                    name: icon
+                    label: Icon
+                    required: false
+                    options:
+                      - arrow-left
+                      - arrow-right
+                      - facebook
+                      - github
+                      - instagram
+                      - linkedin
+                      - twitter
+                      - vimeo
+                      - youtube
+                  - widget: select
+                    name: icon_position
+                    label: Icon position
+                    required: false
+                    default: right
+                    hint: Select "center" to display icon only and hide the label
+                    options:
+                      - left
+                      - right
+                      - center
+                  - widget: boolean
+                    name: new_window
+                    label: Open in new tab/window
+                    required: false
+                    default: false
+                  - widget: boolean
+                    name: no_follow
+                    label: No follow
+                    required: false
+                    default: false
+                    hint: Add rel="nofollow" attribute to the link
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: action
+              - widget: select
+                name: actions_position
+                label: Action buttons position
+                required: false
+                default: bottom
+                hint: The position of action buttons relative to the text content
+                options:
+                  - top
+                  - bottom
+                  - left
+                  - right
+              - widget: select
+                name: actions_width
+                label: Action buttons width
+                required: false
+                default: fourty
+                hint: >-
+                  The action buttons container width as a percentage of the
+                  section width. Used only when the action buttons position is
+                  set to "left" or "right"
+                options:
+                  - fourty
+                  - fifty
+                  - sixty
+              - widget: select
+                name: align
+                label: Section alignment
+                required: false
+                default: left
+                hint: The horizontal alignment of the section content
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: select
+                name: padding_top
+                label: Section top padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the top of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: padding_bottom
+                label: Section bottom padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the bottom of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: has_border
+                label: Section border
+                required: false
+                default: false
+                hint: Add section bottom border
+              - widget: select
+                name: background_color
+                label: Background color
+                required: false
+                default: none
+                hint: The background color of the section
+                options:
+                  - none
+                  - primary
+                  - secondary
+              - widget: image
+                name: background_image
+                label: Background image
+                required: false
+                hint: The image displayed in the background of the section
+              - widget: number
+                name: background_image_opacity
+                label: Background image opacity
+                required: false
+                hint: >-
+                  An integer between 0 and 100. A lower value makes the image
+                  more transparent
+                valueType: int
+              - widget: select
+                name: background_image_size
+                label: Background image size
+                required: false
+                default: cover
+                hint: The size of the background image
+                options:
+                  - auto
+                  - contain
+                  - cover
+              - widget: select
+                name: background_image_position
+                label: Background image position
+                required: false
+                default: center center
+                hint: >-
+                  The starting position of a background image. The first value
+                  is the horizontal position, and the second value is the
+                  vertical
+                options:
+                  - left top
+                  - left center
+                  - left bottom
+                  - center top
+                  - center center
+                  - center bottom
+                  - right top
+                  - right center
+                  - right bottom
+              - widget: select
+                name: background_image_repeat
+                label: Background image repeat
+                required: false
+                default: no-repeat
+                hint: Repeat the image to cover the whole area
+                options:
+                  - repeat
+                  - no-repeat
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: cta_section
+          - name: form_section
+            widget: object
+            label: Form section
+            fields:
+              - widget: string
+                name: title
+                label: Title
+                required: false
+                hint: The title of the section
+              - widget: string
+                name: subtitle
+                label: Subtitle
+                required: false
+                hint: The subtitle of the section displayed below the title
+              - widget: select
+                name: title_align
+                label: 'Title, subtitle alignment'
+                required: false
+                default: left
+                hint: The horizontal alignment of the section title and subtitle
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: markdown
+                name: content
+                label: Content
+                required: false
+                hint: The text content of the section
+              - widget: select
+                name: content_align
+                label: Content alignment
+                required: false
+                default: left
+                hint: The horizontal alignment of the section text content
+                options:
+                  - left
+                  - right
+                  - center
+              - widget: select
+                name: form_position
+                label: Form position
+                required: false
+                default: bottom
+                hint: >-
+                  The position of the form relative to the text content of the
+                  section
+                options:
+                  - left
+                  - right
+                  - top
+                  - bottom
+              - widget: select
+                name: form_width
+                label: Form width
+                required: false
+                default: fifty
+                hint: >-
+                  The form container width as a percentage of the section width.
+                  Used only when the form position is set to "left" or "right"
+                options:
+                  - fourty
+                  - fifty
+                  - sixty
+              - widget: select
+                name: form_layout
+                label: Form layout
+                required: false
+                default: stacked
+                hint: >-
+                  The layout of the form. "Inline" layout can only be used if
+                  the form has one input field
+                options:
+                  - stacked
+                  - inline
+              - widget: boolean
+                name: enable_card
+                label: Display form in a box
+                required: false
+                default: false
+                hint: >-
+                  Display form inside a box, i.e. add border and background to
+                  the form container
+              - widget: string
+                name: form_id
+                label: Form ID
+                required: true
+                hint: A unique identifier of the form. Must not contain whitespace
+              - widget: string
+                name: form_action
+                label: Form action
+                required: false
+                hint: >-
+                  The path of your custom "success" page, if you want to replace
+                  the default success message.
+              - widget: list
+                name: form_fields
+                label: Form fields
+                required: false
+                fields:
+                  - widget: select
+                    name: input_type
+                    label: Type
+                    required: true
+                    hint: Type of the form field
+                    options:
+                      - text
+                      - email
+                      - tel
+                      - number
+                      - checkbox
+                      - select
+                      - textarea
+                  - widget: string
+                    name: name
+                    label: Name
+                    required: true
+                    hint: 'The name of the field, submitted with the form'
+                  - widget: string
+                    name: label
+                    label: Label
+                    required: false
+                    hint: 'The caption of the field, shown above the field input'
+                  - widget: string
+                    name: default_value
+                    label: Placeholder text or default value
+                    required: false
+                    hint: >-
+                      The placeholder for textual field types or default option
+                      for select field
+                  - widget: list
+                    name: options
+                    label: Options
+                    required: false
+                    hint: >-
+                      The list of options, used only when the field type is
+                      "select"
+                    field:
+                      label: String
+                      name: string
+                      widget: string
+                  - widget: boolean
+                    name: is_required
+                    label: Is the field required?
+                    required: false
+                    default: false
+                  - widget: hidden
+                    name: type
+                    label: Object Type
+                    required: true
+                    hint: The type of the object
+                    default: form_field
+              - widget: string
+                name: submit_label
+                label: Submit button label
+                required: true
+              - widget: select
+                name: align_vert
+                label: Section vertical alignment
+                required: false
+                default: top
+                hint: >-
+                  The vertical alignment of the section text content and form.
+                  Used only when the form position is set to "left" or "right"
+                options:
+                  - top
+                  - middle
+                  - bottom
+              - widget: select
+                name: padding_top
+                label: Section top padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the top of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: select
+                name: padding_bottom
+                label: Section bottom padding
+                required: false
+                default: medium
+                hint: The padding area (space) on the bottom of the section
+                options:
+                  - none
+                  - small
+                  - medium
+                  - large
+              - widget: boolean
+                name: has_border
+                label: Section border
+                required: false
+                default: false
+                hint: Add section bottom border
+              - widget: select
+                name: background_color
+                label: Background color
+                required: false
+                default: none
+                hint: The background color of the section
+                options:
+                  - none
+                  - primary
+                  - secondary
+              - widget: image
+                name: background_image
+                label: Background image
+                required: false
+                hint: The image displayed in the background of the section
+              - widget: number
+                name: background_image_opacity
+                label: Background image opacity
+                required: false
+                hint: >-
+                  An integer between 0 and 100. A lower value makes the image
+                  more transparent
+                valueType: int
+              - widget: select
+                name: background_image_size
+                label: Background image size
+                required: false
+                default: cover
+                hint: The size of the background image
+                options:
+                  - auto
+                  - contain
+                  - cover
+              - widget: select
+                name: background_image_position
+                label: Background image position
+                required: false
+                default: center center
+                hint: >-
+                  The starting position of a background image. The first value
+                  is the horizontal position, and the second value is the
+                  vertical
+                options:
+                  - left top
+                  - left center
+                  - left bottom
+                  - center top
+                  - center center
+                  - center bottom
+                  - right top
+                  - right center
+                  - right bottom
+              - widget: select
+                name: background_image_repeat
+                label: Background image repeat
+                required: false
+                default: no-repeat
+                hint: Repeat the image to cover the whole area
+                options:
+                  - repeat
+                  - no-repeat
+              - widget: hidden
+                name: type
+                label: Object Type
+                required: true
+                hint: The type of the object
+                default: form_section
+      - widget: object
+        name: seo
+        label: Seo
+        required: false
+        fields:
+          - widget: string
+            name: title
+            label: Title
+            required: false
+            default: ''
+            hint: The page title that goes into the <title> tag
+          - widget: string
+            name: description
+            label: Description
+            required: false
+            default: ''
+            hint: >-
+              The page description that goes into the <meta name="description">
+              tag
+          - widget: list
+            name: robots
+            label: Robots
+            required: false
+            hint: The items that go into the <meta name="robots"> tag
+            field:
+              label: Select
+              name: select
+              widget: select
+              options:
+                - all
+                - index
+                - follow
+                - noindex
+                - nofollow
+                - noimageindex
+                - notranslate
+                - none
+          - widget: list
+            name: extra
+            label: Extra
+            required: false
+            hint: >-
+              Additional definition for specific meta tags such as open-graph,
+              twitter, etc.
+            fields:
+              - widget: string
+                name: name
+                label: Name
+                required: false
+                default: ''
+              - widget: string
+                name: value
+                label: Value
+                required: false
+                default: ''
+              - widget: string
+                name: keyName
+                label: Key Name
+                required: false
+                default: name
+              - widget: boolean
+                name: relativeUrl
+                label: Relative Url
+                required: false
+          - widget: hidden
+            name: type
+            label: Object Type
+            required: true
+            hint: The type of the object
+            default: konzek_page_meta
+      - widget: hidden
+        name: template
+        label: Template
+        required: true
+        default: advanced
+    filter:
+      field: template
+      value: product
