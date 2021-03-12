@@ -1,16 +1,7 @@
 ---
 title: TPC 17
 subtitle: >-
-  Özel tasarlanmış 1280x1024 17” Renkli LCD ekranıyla kolay kullanım özelliği sağlamaktadır. Windows ya da Linux işletim sistemi ile kullanılabilir. 
-sections:
-actions:
-  - type: action
-    label: Detaylı Bilgi
-    url: /panel-pc/tpc-15
-    style: primary
-    has_icon: true
-    icon: arrow-right
-    icon_position: right    
+  Özel tasarlanmış 1280x1024 17” Renkli LCD ekranıyla kolay kullanım özelliği sağlamaktadır. Windows ya da Linux işletim sistemi ile kullanılabilir.   
 excerpt: >-
    Özel tasarlanmış 1280x1024 17” Renkli LCD ekranıyla kolay kullanım özelliği sağlamaktadır. Windows ya da Linux işletim sistemi ile kullanılabilir.
 thumb_image:  images/tpc17.png
