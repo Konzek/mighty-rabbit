@@ -123,7 +123,7 @@ sections:
     has_border: true
     background_color: secondary     
 seo:
-  type: Konzek_page_meta
+  type: konzek_page_meta
   title: "TUEKS | Endüstriyel KIOSK, Panel PC ve ANDON Çözümleri"
   description: The preview of the Startup theme
   extra:

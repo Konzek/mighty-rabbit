@@ -1,7 +1,7 @@
 ---
 title: Privacy Policy
 seo:
-  type: Konzek_page_meta
+  type: konzek_page_meta
   title: Privacy Policy
   description: This is the privacy policy page
   extra:
