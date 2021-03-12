@@ -1138,6 +1138,13 @@
     escape-string-regexp "^2.0.0"
     lodash.deburr "^4.1.0"
 
+"@stackbit/gatsby-plugin-menus@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@stackbit/gatsby-plugin-menus/-/gatsby-plugin-menus-0.0.4.tgz#d7e9ba055e1aa185ecc5d313752adc77c95cbf4c"
+  integrity sha512-WBcw7Xpk4uRwlWQV8xi95hjMoU1qzvMUxKB1N/aiq7WSKDSTVSN7v1yx1nsMSLzz8BWWLq43912/kEAot+GLiA==
+  dependencies:
+    lodash "^4.17.11"
+
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@szmarczak/http-timer/-/http-timer-1.1.2.tgz#b1665e2c461a2cd92f4c1bbf50d5454de0d4b421"
