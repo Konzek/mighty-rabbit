@@ -48,8 +48,7 @@ sections:
       - type: feature
         title: Endüstriyel Panel PC
         content: >-
-          With Your Goal, you can create a dashboard with data about your
-          activities and track your progress.
+          Tueks Panel PC endüstriyel çalışma şartlarına uygun olarak tasarlanmıştır. Özellikle tozlu, sıcak, nemli ve titreşimli ortamlarda sorunsuz bir çalışma performansı sunar.
         actions:
           - type: action
             label: Detaylı Bilgi
@@ -65,9 +64,7 @@ sections:
       - type: feature
         title: Endüstriyel KIOSK
         content: >-
-          Friends are an integral part of our life, a true friend can motivate
-          you to achieve your goals. With Your Goal, you can set goals with your
-          friends and achieve them together.
+          Kolay kullanım için 18.5” (47cm) geniş ekrana sahiptir. Performanslı çalışması için SSD ile desteklenmiştir.
         actions:
           - type: action
             label: Detaylı Bilgi
@@ -83,7 +80,7 @@ sections:
       - type: feature
         title: Endüstriyel Andon Ekran
         content: >-
-          ''55 ve ''75 seçenekleriyle kolay montaj.
+          ''55 ve ''75 seçenekleriyle kolay montajlanabilen LED ekran ve 1920x1080 çözünürlüğe sahip Tueks Andon Ekranlar.
         actions:
           - type: action
             label: Detaylı Bilgi
