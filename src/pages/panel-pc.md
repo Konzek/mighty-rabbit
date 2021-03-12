@@ -1,39 +1,32 @@
 ---
 title: Endüstriyel Panel PC
 sections:
-  - type: hero_section
-    title: Endüstriyel Panel PC
-    subtitle: Tueks Panel PC endüstriyel çalışma şartlarına uygun olarak tasarlanmıştır. Özellikle tozlu, sıcak, nemli ve titreşimli ortamlarda sorunsuz bir çalışma performansı sunar.
-    # actions:
-    #   - type: action
-    #     label: İletişim
-    #     url: /pricing
-    #     style: primary
-    image: 
-    image_alt: Hero section placeholder image
-    media_position: center
+  - media_position: center
+    image_alt: ""
     align: center
     padding_top: large
-    padding_bottom: small
+    background_image: null
     background_color: none
-    background_image: 
-    background_image_opacity: 60
     background_image_size: auto
+    background_image_opacity: 60
+    subtitle: Tueks Panel PC endüstriyel çalışma şartlarına uygun olarak
+      tasarlanmıştır. Özellikle tozlu, sıcak, nemli ve titreşimli ortamlarda
+      sorunsuz bir çalışma performansı sunar.
+    title: Endüstriyel Panel PC
+    padding_bottom: small
+    type: hero_section
+    image: null
     background_image_position: center top
-  - type: grid_section
-    title: Ürünler
+  - align: center
     grid_items:
-      - type: grid_item
-        title: TPC-10
-        title_align: left
-        content: >-
-          **10”**  Endüstriyel Panel PC
-        content_align: left
-        image: images/tpc10.png
+      - image_align: left
         image_alt: Section item 1 icon
-        image_position: top
-        image_align: left
         image_has_padding: true
+        image_position: top
+        title: TPC-10
+        content: "**10”**  Endüstriyel Panel PC"
+        type: grid_item
+        image: images/tpc10.png
         actions:
           - type: action
             label: Detaylı Bilgi
@@ -42,17 +35,16 @@ sections:
             has_icon: true
             icon: arrow-right
             icon_position: right
-      - type: grid_item
-        title: TPC-15
         title_align: left
-        content: >-
-          **15”**  Endüstriyel Panel PC
         content_align: left
-        image: images/tpc-15.png
+      - image_align: left
         image_alt: Section item 2 icon
-        image_position: top
-        image_align: left
         image_has_padding: true
+        image_position: top
+        title: TPC-15
+        content: "**15”**  Endüstriyel Panel PC"
+        type: grid_item
+        image: images/tpc-15.png
         actions:
           - type: action
             label: Detaylı Bilgi
@@ -60,18 +52,19 @@ sections:
             style: primary
             has_icon: true
             icon: arrow-right
-            icon_position: right        
-      - type: grid_item
-        title: TPC-17
+            icon_position: right
         title_align: left
-        content: >-
-          Özel tasarlanmış 1280x1024 **17”** Renkli LCD ekranıyla kolay kullanım özelliği sağlamaktadır. Windows ya da Linux işletim sistemi ile kullanılabilir. 
         content_align: left
-        image: images/tpc17.png
+      - image_align: left
         image_alt: TPC-17
-        image_position: top
-        image_align: left
         image_has_padding: true
+        image_position: top
+        title: TPC-17
+        content: "Özel tasarlanmış 1280x1024 **17”** Renkli LCD ekranıyla kolay kullanım
+          özelliği sağlamaktadır. Windows ya da Linux işletim sistemi ile
+          kullanılabilir. "
+        type: grid_item
+        image: images/tpc17.png
         actions:
           - type: action
             label: Detaylı Bilgi
@@ -79,37 +72,23 @@ sections:
             style: primary
             has_icon: true
             icon: arrow-right
-            icon_position: right        
-    grid_cols: two
-    grid_gap_vert: medium
-    grid_gap_horiz: medium
+            icon_position: right
+        title_align: left
+        content_align: left
     enable_cards: true
-    align: center
+    grid_cols: two
     background_color: none
-  # - type: cta_section
-  #   title: Endüstriyel Çözümler
-  #   content: Sektörünüze uygun çözümler için hemen destek alın!
-  #   actions:
-  #     - type: action
-  #       label: Destek Al
-  #       url: /iletisim
-  #       style: primary
-  #   actions_width: fourty
-  #   align: center
-  #   padding_top: large
-  #   padding_bottom: large
-  #   background_color: primary
-  #   background_image: none
-  #   background_image_opacity: 10
-  #   background_image_size: cover
-  #   background_image_position: center top    
-  - type: form_section
-    title: Bültenimize Kaydolun!
-    title_align: center
-    form_position: bottom
+    grid_gap_vert: medium
+    title: Ürünler
+    grid_gap_horiz: medium
+    type: grid_section
+  - form_position: bottom
     form_layout: inline
-    form_id: subscribeForm
+    padding_top: medium
+    submit_label: Kaydol
+    has_border: true
     form_action: /thank-you
+    background_color: secondary
     form_fields:
       - type: form_field
         input_type: email
@@ -117,36 +96,36 @@ sections:
         label: Email
         default_value: E-Posta Adresiniz
         is_required: true
-    submit_label: Kaydol
-    padding_top: medium
+    form_id: subscribeForm
+    title: Bültenimize Kaydolun!
     padding_bottom: medium
-    has_border: true
-    background_color: secondary     
+    type: form_section
+    title_align: center
 seo:
   type: konzek_page_meta
-  title: "TUEKS | Endüstriyel KIOSK, Panel PC ve ANDON Çözümleri"
-  description: The preview of the Startup theme
+  title: TUEKS | Endüstriyel KIOSK, Panel PC ve ANDON Çözümleri
+  description: Endüstriyel koşullara uyumlu Kiosk, andon ekran ve panel PC çözümleri.
   extra:
-    - name: 'og:type'
+    - name: og:type
       value: website
       keyName: property
-    - name: 'og:title'
-      value: "Endüstriyel KIOSK, Panel PC ve ANDON Çözümleri"
+    - name: og:title
+      value: Endüstriyel KIOSK, Panel PC ve ANDON Çözümleri
       keyName: property
-    - name: 'og:description'
+    - name: og:description
       value: The preview of the Startup theme
       keyName: property
-    - name: 'og:image'
+    - name: og:image
       value: images/feature-1.png
       keyName: property
       relativeUrl: true
-    - name: 'twitter:card'
+    - name: twitter:card
       value: summary_large_image
-    - name: 'twitter:title'
+    - name: twitter:title
       value: Konzek Startup Theme
-    - name: 'twitter:description'
+    - name: twitter:description
       value: The preview of the Startup theme
-    - name: 'twitter:image'
+    - name: twitter:image
       value: images/feature-1.png
       relativeUrl: true
 template: advanced
