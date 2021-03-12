@@ -40,7 +40,7 @@ sections:
     has_border: true
     background_color: secondary
 seo:
-  type: stackbit_page_meta
+  type: Konzek_page_meta
   title: Blog
   description: This is the blog page
   extra:

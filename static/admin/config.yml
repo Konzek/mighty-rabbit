@@ -56,7 +56,7 @@ collections:
             options:
               - blue
               - green
-              - red
+              - orange
               - gray
           - widget: select
             name: mode
@@ -894,7 +894,7 @@ collections:
             label: Object Type
             required: true
             hint: The type of the object
-            default: stackbit_page_meta
+            default: Konzek_page_meta
       - widget: hidden
         name: template
         label: Template
@@ -1073,7 +1073,7 @@ collections:
             label: Object Type
             required: true
             hint: The type of the object
-            default: stackbit_page_meta
+            default: Konzek_page_meta
       - widget: hidden
         name: template
         label: Template
@@ -2868,7 +2868,7 @@ collections:
             label: Object Type
             required: true
             hint: The type of the object
-            default: stackbit_page_meta
+            default: Konzek_page_meta
       - widget: hidden
         name: template
         label: Template

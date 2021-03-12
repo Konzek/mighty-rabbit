@@ -1,46 +1,40 @@
 {
-    "title": "Stackbit Startup Theme",
+    "title": "Endüstriyel KIOSK, Panel PC ve ANDON çözümleri",
     "layout_type": "full-width",
-    "style": "classic",
-    "palette": "blue",
+    "style": "minimal",
+    "palette": "orange",
     "mode": "light",
-    "base_font": "serif",
+    "base_font": "sans-serif",
     "header": {
         "type": "header",
-        "title": "Startup",
-        "logo": "images/logo.svg",
-        "logo_alt": "YourGoal logo",
+        "title": "TUEKS",
+        "logo": "images/tueks-logo.svg",
+        "logo_alt": "Tueks",
         "has_primary_nav": false,
         "has_secondary_nav": true,
-        "secondary_nav_links": [
-            {
+        "secondary_nav_links": [{
                 "type": "action",
-                "label": "About",
-                "url": "/about",
+                "label": "Endüstriyel Panel PC",
+                "url": "/panel-pc",
                 "style": "link"
             },
             {
                 "type": "action",
-                "label": "FAQ",
-                "url": "/faq",
+                "label": "KIOSK",
+                "url": "/kiosk",
                 "style": "link"
             },
             {
                 "type": "action",
-                "label": "Blog",
-                "url": "/blog",
+                "label": "Andon Ekran",
+                "url": "/andon",
                 "style": "link"
             },
+        
             {
                 "type": "action",
-                "label": "Log in",
-                "url": "/thank-you",
-                "style": "secondary"
-            },
-            {
-                "type": "action",
-                "label": "Get Started",
-                "url": "/thank-you",
+                "label": "İletişim",
+                "url": "/iletisim",
                 "style": "primary"
             }
         ],
@@ -48,12 +42,11 @@
     },
     "footer": {
         "type": "footer",
-        "logo": "images/logo.svg",
-        "logo_alt": "YourGoal logo",
-        "has_primary_nav": true,
-        "primary_nav_title": "Company",
-        "primary_nav_links": [
-            {
+        "logo": "images/tueks-logo.svg",
+        "logo_alt": "TUEKS",
+        "has_primary_nav": false,
+        "primary_nav_title": "Tueks",
+        "primary_nav_links": [{
                 "type": "action",
                 "label": "About",
                 "url": "/about",
@@ -72,10 +65,9 @@
                 "style": "link"
             }
         ],
-        "has_secondary_nav": true,
+        "has_secondary_nav": false,
         "secondary_nav_title": "Blog",
-        "secondary_nav_links": [
-            {
+        "secondary_nav_links": [{
                 "type": "action",
                 "label": "News",
                 "url": "/blog/category/news",
@@ -94,10 +86,9 @@
                 "style": "link"
             }
         ],
-        "has_tertiary_nav": true,
+        "has_tertiary_nav": false,
         "tertiary_nav_title": "Legal",
-        "tertiary_nav_links": [
-            {
+        "tertiary_nav_links": [{
                 "type": "action",
                 "label": "Terms & Conditions",
                 "url": "/terms-conditions",
@@ -110,9 +101,8 @@
                 "style": "link"
             }
         ],
-        "has_social": true,
-        "social_links": [
-            {
+        "has_social": false,
+        "social_links": [{
                 "type": "action",
                 "label": "Twitter",
                 "url": "https://twitter.com/",
@@ -163,6 +153,6 @@
                 "new_window": true
             }
         ],
-        "content": "&copy; Stackbit. All rights reserved. This Jamstack site was created with <a href=\"https://www.stackbit.com/?utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">Stackbit</a>. Create yours <a href=\"https://app.stackbit.com/create?theme=startup&utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">now</a>"
+        "content": "&copy; <a href=\"https://www.konzek.com/\" target=\"_blank\" rel=\"noopener\">Konzek Teknoloji A.Ş.</a> Tüm Hakları Saklıdır. "
     }
 }

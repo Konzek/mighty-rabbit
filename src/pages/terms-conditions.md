@@ -1,7 +1,7 @@
 ---
 title: Terms & Conditions
 seo:
-  type: stackbit_page_meta
+  type: Konzek_page_meta
   title: Terms and Conditions
   description: This is the terms and conditions page
   extra:

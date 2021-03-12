@@ -44,9 +44,9 @@ textarea {
 	position: relative;
 
 	select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	padding-right: 25px;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		padding-right: 25px;
 
 		&:focus {
 			outline: 0;
@@ -55,14 +55,14 @@ textarea {
 
 	&:before,
 	&:after {
-	border: solid transparent;
-	border-width: .3125em;
-	box-sizing: border-box;
-	content: "";
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	z-index: 1;
+		border: solid transparent;
+		border-width: .3125em;
+		box-sizing: border-box;
+		content: "";
+		position: absolute;
+		right: 10px;
+		top: 50%;
+		z-index: 1;
 	}
 
 	&:before {
@@ -79,7 +79,7 @@ textarea {
 .form-checkbox {
 	padding-left: 1.5em;
 	position: relative;
-	
+
 	input[type=checkbox] {
 		height: 1.5em;
 		left: 0;
@@ -99,6 +99,7 @@ textarea {
 }
 
 .style-classic {
+
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -114,6 +115,7 @@ textarea {
 }
 
 .style-bold {
+
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -126,4 +128,8 @@ textarea {
 		background: $color-bold-input-bg;
 		border-color: transparent;
 	}
+}
+
+.form {
+	margin-bottom: 1rem;
 }

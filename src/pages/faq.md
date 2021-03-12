@@ -51,7 +51,7 @@ sections:
     has_border: false
     background_color: none
 seo:
-  type: stackbit_page_meta
+  type: Konzek_page_meta
   title: FAQ
   description: This is the faq page
   extra:
